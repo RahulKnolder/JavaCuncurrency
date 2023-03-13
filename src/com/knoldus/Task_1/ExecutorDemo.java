@@ -15,6 +15,7 @@ public class ExecutorDemo {
         //The generic type <?> is a wildcard type in Java.
         Future<?>[] futures = new Future<?>[10];
 
+
         for (int index = 0; index < 10; index++) {
             Task task = new Task(index);
             futures[index] = execute.submit(task);
@@ -24,8 +25,8 @@ public class ExecutorDemo {
         for (int index = 0; index < 10; index++) {
             try {
                 futures[index].get();
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
         }
 
